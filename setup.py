@@ -17,13 +17,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-		install_requires = [
-			'click',
-			'gtts'
-		],
+    install_requires=["click", "gtts"],
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
-		entry_points = {
-			'console_scripts': ['booklisten=booklisten.__main__:cli']
-		}
+    entry_points={"console_scripts": ["booklisten=booklisten.__main__:cli"]},
 )
