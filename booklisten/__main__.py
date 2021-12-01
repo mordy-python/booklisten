@@ -10,16 +10,18 @@ BASE_PATH.mkdir(exist_ok=True)
 
 def convert_file(filename):
     click.secho(f"Opening {filename}", fg="green")
-    with open(filename, "r") as book:
-        text = book.read().replace("\n", " ")
-        click.secho(f"Converting to audio...\nThis may take a while", fg="green")
-        audio = gTTS(text)
-        audio.save(f"{BASE_PATH / Path(filename).stem}.mp3")
-        click.secho(
+    try:
+        with open(filename, "r") as book:
+            text = book.read().replace("\n", " ")
+            click.secho(f"Converting to audio...\nThis may take a while", fg="green")
+            audio = gTTS(text)
+            audio.save(f"{BASE_PATH / Path(filename).stem}.mp3")
+            click.secho(
             f"Saved {Path(filename).stem}.mp3 to {BASE_PATH / Path(filename).stem}.mp3\n",
-            fg="green",
-        )
-
+            fg="green")
+    except UnicodeDecodeError as e:
+        click.secho(f'Error! Cannot convert non-text file {filename} to .mp3!\n', fg='red')
+        click.secho(e, bg='bright_yellow')
 
 @cli.command("convert")
 @click.argument("filename")

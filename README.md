@@ -1,6 +1,6 @@
 # BookListen 🎧
 
-AudioBooker is a command-line tool to convert text files to mp3 files. The mp3 files are stored in `~/booklisten`.
+BookListen is a command-line tool to convert text files to mp3 files. The mp3 files are stored in `~/booklisten`.
 
 ## Installation
 Install with pip: `pip install booklisten`
