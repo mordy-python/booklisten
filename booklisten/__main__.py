@@ -17,11 +17,15 @@ def convert_file(filename):
             audio = gTTS(text)
             audio.save(f"{BASE_PATH / Path(filename).stem}.mp3")
             click.secho(
-            f"Saved {Path(filename).stem}.mp3 to {BASE_PATH / Path(filename).stem}.mp3\n",
-            fg="green")
+                f"Saved {Path(filename).stem}.mp3 to {BASE_PATH / Path(filename).stem}.mp3\n",
+                fg="green",
+            )
     except UnicodeDecodeError as e:
-        click.secho(f'Error! Cannot convert non-text file {filename} to .mp3!\n', fg='red')
-        click.secho(e, bg='bright_yellow')
+        click.secho(
+            f"Error! Cannot convert non-text file {filename} to .mp3!\n", fg="red"
+        )
+        click.secho(e, bg="bright_yellow")
+
 
 @cli.command("convert")
 @click.argument("filename")
