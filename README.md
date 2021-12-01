@@ -13,8 +13,12 @@ Install from source:
 ## Usage
 
 ```
-Usage: booklisten convert [OPTIONS] FILENAME
+Usage: booklisten [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --help  Show this message and exit.
+
+Commands:
+  convert      Convert FILENAME to .mp3
+  convert-dir  Convert all files in DIRECTORY to .mp3
 ```
