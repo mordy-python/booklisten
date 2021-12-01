@@ -1,4 +1,4 @@
-# BookListen
+# BookListen 🎧
 
 AudioBooker is a command-line tool to convert text files to mp3 files. The mp3 files are stored in `~/booklisten`.
 
