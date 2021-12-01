@@ -9,9 +9,11 @@ setuptools.setup(
     version=__version__,
     author="Israel Waldner",
     author_email="imky171@gmail.com",
-    description="A command line tool to convert .txt files to audiobooks",
+    description="A command line tool to convert text files to audiobooks",
+    url="https://github.com/mordy-python/booklisten",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    platforms='any',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
