@@ -24,12 +24,14 @@ def convert_file(filename):
 @cli.command("convert")
 @click.argument("filename")
 def convert(filename):
+    """Convert FILENAME to .mp3"""
     convert_file(filename)
 
 
 @cli.command("convert-dir")
 @click.argument("directory")
 def convert_dir(directory):
+    """Convert all files in DIRECTORY to .mp3"""
     for file in Path(directory).glob("*.*"):
         convert_file(file)
 
